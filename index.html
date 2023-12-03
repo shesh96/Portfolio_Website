@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shesh Ram - Portfolio</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+
+    <section id="logo">
+        <!-- <img src="./logo.jpg" alt="Your Logo" style="max-width: 10%; height: auto;"> -->
+    </section>
+    
+    
+</head>
+
+<body>
+    
+    <header>
+        
+        <nav>
+            
+            <ul>
+                <img src="./logo.jpg" alt="Your Logo" style="max-width: 8%; height: auto;">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        
+        <h1 style="color: #ecf0f1;">Shesh Ram</h1>
+        <p>Web Developer</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hi, I'm Shesh Ram, a passionate web developer with a strong foundation in HTML, CSS, and JavaScript.
+        Currently pursuing B Tech in Information Technology at MMMUT, Gorakhpur. I have hands-on experience in
+        building dynamic and user-friendly websites, and I recently completed a web development internship at
+        Code Clause. My projects, including an E-Commerce website and a personal Portfolio site, showcase my
+        dedication to creating robust and visually appealing web solutions. I'm also an enthusiastic problem
+        solver, a 5-star coder at HackerRank, and a 2-star coder at CodeChef. Let's connect and explore the
+        exciting world of web development!</p>
+    </section>
+
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="projects">
+            <!-- Dynamically generated projects will go here -->
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <!-- Dynamically generated skills will go here -->
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2>Education</h2>
+        <ul class="education-list">
+            <!-- Dynamically generated education details will go here -->
+        </ul>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
+        <ul class="experience-list">
+            <!-- Dynamically generated experience details will go here -->
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>
+            Gmail: <a href="mailto:shivaay9670@gmail.com">shivaay9670@gmail.com</a> <br>
+            GitHub: <a href="https://github.com/shesh96" target="_blank">github.com/shesh96</a> <br>
+            LinkedIn: <a href="https://linkedin.com/in/shesh96" target="_blank">linkedin.com/in/shesh96</a>
+        </p>
+    </section>
+
+    <footer>
+        <!-- Add your footer content here -->
+    </footer>
+
+    <script>
+        // JavaScript for dynamically generating content
+
+        // Sample project data (replace this with your actual project data)
+        const projectsData = [
+            { name: 'MMMUT STORE E-Commerce website ', description: 'MMMUT STORE E-Commerce website (Using HTML, CSS, JavaScript, React.js, Node.js, MySQL) Developed an end-to-end E-Commerce website, MMMUT STORE using HTML, CSS, and JavaScript for the frontend, while leveraging React.js for dynamic user interfaces Implemented dynamic user interfaces with React.js Demonstrated proficiency in Web development by creating a user-friendly online store, showcasing strong problem solving abilities and attention to detail.' },
+            
+        ];
+
+        // Sample skills, education, and experience data
+        const skillsData = ['HTML', 'CSS', 'JavaScript', 'React', 'Node.js'];
+        const educationData = ['B Tech (Information Technology) 2020-2024 MMMUT, Gorakhpur 6.92/10.0', ' Class XII (UP Board) 2018 S A S B S Inter College , Gonda 74.6%', 'Class X (UP Board) 2016 Balika I C Sahibapur Wazir Ganj Gonda 84.16% '];
+        const experienceData = ['Web Development Intern Code Clause Remote ,June‘23-July’23 Worked on various web development projects, contributing to front-end development using HTML, CSS, and JavaScript. Implemented responsive design principles, ensuring seamless user experiences across desktop and mobile devices'];
+
+        // Function to create a list item
+        function createListItem(text) {
+            const listItem = document.createElement('li');
+            listItem.textContent = text;
+            return listItem;
+        }
+
+        // Dynamically generate projects
+        const projectsContainer = document.querySelector('.projects');
+        projectsData.forEach(project => {
+            const projectElement = document.createElement('div');
+            projectElement.classList.add('project');
+            projectElement.innerHTML = `<h3>${project.name}</h3><p>${project.description}</p>`;
+            projectsContainer.appendChild(projectElement);
+        });
+
+        // Dynamically generate skills
+        const skillsList = document.querySelector('.skills-list');
+        skillsData.forEach(skill => {
+            const skillItem = createListItem(skill);
+            skillsList.appendChild(skillItem);
+        });
+
+        // Dynamically generate education details
+        const educationList = document.querySelector('.education-list');
+        educationData.forEach(education => {
+            const educationItem = createListItem(education);
+            educationList.appendChild(educationItem);
+        });
+
+        // Dynamically generate experience details
+        const experienceList = document.querySelector('.experience-list');
+        experienceData.forEach(experience => {
+            const experienceItem = createListItem(experience);
+            experienceList.appendChild(experienceItem);
+        });
+
+        // Smooth scrolling effect for anchor links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+        
+    <footer>
+        <p>&copy; 2023 Shesh Ram - Portfolio</p>
+        
+      </footer>
+</body>
+
+</html>
